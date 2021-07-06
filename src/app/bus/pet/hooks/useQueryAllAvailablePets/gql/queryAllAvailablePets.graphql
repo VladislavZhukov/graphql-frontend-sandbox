@@ -1,0 +1,8 @@
+ query allAvailablePets {
+  allAvailablePets {
+    id
+    name
+    weight
+  }
+}
+ 

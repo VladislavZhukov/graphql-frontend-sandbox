@@ -1,0 +1,7 @@
+ query getPetById($id: ID!) {
+  petById(id: $id) {
+    id
+    name
+    weight
+  }
+}

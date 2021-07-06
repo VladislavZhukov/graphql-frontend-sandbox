@@ -1,0 +1,15 @@
+{
+    "name": "GraphQL Schema",
+    "schemaPath": "schema.json",
+    "extensions": {
+        "endpoints": {
+            "Default GraphQL Extension": {
+                "url": "https://funded-pet-library.moonhighway.com/",
+                "headers": {
+                    "user-agent": "JS GraphQL"
+                },
+                "introspect": true
+            }
+        }
+    }
+}
