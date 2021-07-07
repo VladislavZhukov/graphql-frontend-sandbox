@@ -9,15 +9,29 @@ import {
     InMemoryCache
 } from '@apollo/client';
 
+import { setContext } from 'apollo-link-context';
+
+//Auth
+const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('token');
+
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : ''
+        }
+    };
+});
+
 //GraphQL Server
 const uri = 'https://funded-pet-library.moonhighway.com/';
-const link = createHttpLink({ uri });
+const httpLink = createHttpLink({ uri });
 
 //Cache inicialization
 const cache = new InMemoryCache();
 
 export const client = new ApolloClient({
     ssrMode: true,
-    link: link,
+    link: authLink.concat(httpLink),
     cache: cache,
 });
