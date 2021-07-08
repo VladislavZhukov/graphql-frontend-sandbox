@@ -22,10 +22,10 @@ export const CheckInPet = () => {
   return (
     <>
       <h1>checkIn</h1>
-      <button onClick={() => checkIn('C-1')}>CheckIn</button>
       {petJSX}
       {errorsJSX}
       {errorUseCheckInJSX}
+      <button onClick={() => checkIn("C-1")}>CheckIn</button>
     </>
   );
 };

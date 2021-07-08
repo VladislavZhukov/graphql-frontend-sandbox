@@ -3,7 +3,6 @@ import { useCustomerCreator } from "./hooks/useCustomerCreator";
 
 export const Customer = () => {
     const { handleChange, save, createdAccount } = useCustomerCreator();
-    console.log(createdAccount)
 
     const customerJSX = createdAccount && (
         <p>

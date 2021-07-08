@@ -3,9 +3,8 @@ import { loader } from 'graphql.macro'
 import { useMutation } from '@apollo/react-hooks';
 import { useState } from 'react';
 
-//mutation
+//Mutation
 const mutationCheckIn = loader('./gql/mutationCheckIn.graphql');
-
 
 export const useCheckIn = () => {
     const [_checkIn, { data, error }] = useMutation(mutationCheckIn);
